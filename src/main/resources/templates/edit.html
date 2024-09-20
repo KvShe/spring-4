@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Редактирование</title>
+</head>
+<body>
+<header style="text-align: center">
+    <a href="/">Главная</a>
+    <a href="/users">Список пользователей</a>
+    <hr>
+</header>
+<form th:method="patch" th:action="@{/users/{id}(id=${user.id})}" th:object="${user}">
+    <label for="name">Имя</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Введите имя">
+    <label for="surname">Фамилия</label>
+    <input type="text" th:field="*{surname}" id="surname" placeholder="Введите фамилию">
+    <input type="submit" value="Принять изменения">
+</form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: homework-4
+  mvc:
+    hidden method:
+      filter:
+        enabled: true # ????????? thymeleaf ???????????? delete & update
+  jpa:
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title th:text="${user.name} + ' ' + ${user.surname}"></title>
+</head>
+<body>
+<header style="text-align: center">
+    <a href="/">Главная</a>
+    <a href="/users">Список пользователей</a>
+    <hr>
+</header>
+<h2>Профиль пользователя:</h2>
+<h3 th:text="'Имя: ' + ${user.name}"></h3>
+<h3 th:text="'Фамилия: ' + ${user.surname}"></h3>
+<h3 th:text="'id: ' + ${user.id}"></h3>
+
+<div>
+    <form th:action="@{/users/{id}/edit(id=${user.id})}" th:object="${user}">
+        <input type="submit" value="Редактировать">
+    </form>
+    <p></p>
+    <form th:action="@{/users/{id}(id=${user.id})}" th:object="${user}" th:method="delete">
+        <input type="submit" value="Удалить">
+    </form>
+</div>
+</body>
+</html>
