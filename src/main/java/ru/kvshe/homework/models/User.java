@@ -17,12 +17,13 @@ import lombok.Setter;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String name;
-    private String surname;
+    private Long id;
+    private String username;
+    private String password;
+    private String role;
 
     @Override
     public String toString() {
-        return id + " " + name + " " + surname;
+        return "User [id=" + id + ", username=" + username + ", role=" + role + "]";
     }
 }

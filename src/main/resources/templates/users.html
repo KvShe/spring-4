@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Users</title>
+    <link media="all" rel="stylesheet" th:href="@{/style.css}" type="text/css">
 </head>
 <body>
 <header style="text-align: center">
@@ -13,8 +14,8 @@
     <a href="/users">Список пользователей</a>
     <hr>
 </header>
-<div th:each="user : ${users}">
-    <p><a th:href="@{/users/{id}(id=${user.id})}" th:text="${user.name} + ' ' + ${user.surname}"></a></p>
+<div class="center" th:each="user : ${users}">
+    <p><a th:href="@{/users/{id}(id=${user.id})}" th:text="${user.username} + ' ' + ${user.password}"></a></p>
 </div>
 </body>
 </html>
